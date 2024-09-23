@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start; 
+}
+
+.user-input {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.inline-label {
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-input select {
+  padding: 8px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
+
+.agregat-selection {
+  display: flex;
+  justify-content: flex-start; 
+  margin-top: 10px; 
+}
+
+.agregat-selection label {
+  margin-right: 15px; 
+}
+
+.output-container {
+  display: flex;
+  align-items: flex-start; 
+  width: 50%;
+
+}
+
+.text-output1 {
+  flex: 1;
+  margin-right: 20px;
+  margin-bottom: 100px 
+}
+.text-output2 {
+  flex: 1;
+  margin-right: 20px; 
+}
+
+.separator {
+  border-top: 2px solid #ccc; 
+  width: 30%; 
+  margin: 20px 0;
+  align-self: center;
+}
+
+
+.date-inputs {
+  display: flex;
+  align-items: center;
+  margin: 10px 0; 
+}
+
+.date-inputs label {
+  margin-right: 5px; 
+}
+
+.date-inputs input {
+  margin-right: 20px; 
+}
+.chart-container {
+  width: 100%; 
+  margin-left: 20px;
+}
+
