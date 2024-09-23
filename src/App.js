@@ -36,16 +36,13 @@ function App() {
     setLoremText(generateLoremIpsum());
   }, [name, selectedAgregats]);
 
-  
   const chartData = [
     { date: '2024-01-01', 'Agrégat': Math.random() * 100, 'Trésorerie': Math.random() * 100, 'Immobilisation': Math.random() * 100, 'Obligation': Math.random() * 100 },
     { date: '2024-01-02', 'Agrégat': Math.random() * 100, 'Trésorerie': Math.random() * 100, 'Immobilisation': Math.random() * 100, 'Obligation': Math.random() * 100 },
-    
   ];
 
-  
   const colors = {
-    'Agrégat ': '#0000FF', 
+    'Agrégat': '#0000FF', 
     'Trésorerie': '#FF0000', 
     'Immobilisation': '#000000', 
     'Obligation': '#FFFF00',
@@ -53,7 +50,6 @@ function App() {
 
   return (
     <div className="app-container">
-    
       <div className="user-input">
         <label htmlFor="patrimoine-name" className="inline-label">Patrimoine</label>
         <select id="patrimoine-name" value={name} onChange={handleNameChange}>
@@ -64,7 +60,6 @@ function App() {
         </select>
       </div>
 
-  
       <div className="agregat-selection">
         {['Agrégat', 'Trésorerie', 'Immobilisation', 'Obligation'].map((agregat) => (
           <label key={agregat}>
@@ -79,7 +74,6 @@ function App() {
         ))}
       </div>
 
-      
       <div className="date-inputs">
         <label htmlFor="start-date">De: </label>
         <input
@@ -98,33 +92,34 @@ function App() {
       </div>
     
       <div className="output-container">
-        <div className="output">
-          <div className="text-output1">
-            <h3>Flux Impossible</h3>
-            <p>{loremText}</p>
-          </div>
+        {name && (
+          <div className="output">
+            <div className="text-output1">
+              <h3>Flux Impossible</h3>
+              <p>{loremText}</p>
+            </div>
 
-          <div className="separator"></div> 
+            <div className="separator"></div> 
 
-          <div className="text-output2">
-            <h3>Flux Journalier</h3>
-            <p>
-              {name
-                ? `Lorem Ipsum pour ${name}. ` +
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
-                  'Vivamus luctus urna sed urna suscipit, at vulputate nisi gravida. ' +
-                  'Integer aliquam elit ac nibh faucibus, non tincidunt nisl tristique. ' +
-                  'Cras quis metus nec risus accumsan fringilla. ' +
-                  'Nullam vitae magna in elit bibendum gravida. ' +
-                  'Proin at erat a nunc faucibus viverra. ' +
-                  'Donec non urna ac est vehicula vehicula.'
-                : 'Entrez un nom de patrimoine'}
-            </p>
+            <div className="text-output2">
+              <h3>Flux Journalier</h3>
+              <p>
+                {name
+                  ? `Lorem Ipsum pour ${name}. ` +
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+                    'Vivamus luctus urna sed urna suscipit, at vulputate nisi gravida. ' +
+                    'Integer aliquam elit ac nibh faucibus, non tincidunt nisl tristique. ' +
+                    'Cras quis metus nec risus accumsan fringilla. ' +
+                    'Nullam vitae magna in elit bibendum gravida. ' +
+                    'Proin at erat a nunc faucibus viverra. ' +
+                    'Donec non urna ac est vehicula vehicula.'
+                  : 'Entrez un nom de patrimoine'}
+              </p>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
-    
       <div className="chart-container" style={{ marginLeft: '20px', marginTop: '20px' }}>
         {selectedAgregats.length > 0 ? (
           <LineChart width={600} height={300} data={chartData}>
