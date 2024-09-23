@@ -95,14 +95,14 @@ function App() {
         {name && (
           <div className="output">
             <div className="text-output1">
-              <h3>Flux Impossible</h3>
+              <h3>!!Flux Impossible!!</h3>
               <p>{loremText}</p>
             </div>
 
             <div className="separator"></div> 
 
             <div className="text-output2">
-              <h3>Flux Journalier</h3>
+              <h3>!!Flux Journalier!!</h3>
               <p>
                 {name
                   ? `Lorem Ipsum pour ${name}. ` +
@@ -138,7 +138,7 @@ function App() {
             ))}
           </LineChart>
         ) : (
-          <p>Aucun agrégat sélectionné pour afficher le graphique.</p>
+          <p>**Aucun agrégat sélectionné pour afficher le graphique.**</p>
         )}
       </div>
 
