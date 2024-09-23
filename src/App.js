@@ -142,7 +142,7 @@ function App() {
         )}
       </div>
 
-      <div style={{ clear: 'both' }} /> {/* Clear float */}
+      <div style={{ clear: 'both' }} /> 
     </div>
   );
 }
